@@ -1,7 +1,7 @@
 {
   "name": "validity-validate-if-property-in",
   "description": "Validate the current property if another property value is one of a list of values.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {},
   "main": "validator.js",
   "scripts": {
