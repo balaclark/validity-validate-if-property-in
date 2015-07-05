@@ -1,14 +1,11 @@
 # validity-validate-if-property-equals
 
-Validate the current property if another property is equal to a particular value.
-
-E.g you have a URL property of a schema, which is not a required field.
-You only want to apply validation to that field if another field has a value equal to a certain value
+Validate the current property if another property value is one of a list of values.
 
 ## Installation
 
 ```
-npm install validity-validate-if-property-equals --save
+npm install validity-validate-if-property-in-array --save
 ```
 
 ## Usage
@@ -20,7 +17,7 @@ var validity = require('validity')
   , schemata = require('schemata')
   , save = require('save')
   , collection = save('author')
-  , validateIfPropertyEquals = require('validity-validate-if-property-equals')
+  , validateIfPropertyIn = require('validity-validate-if-property-in-array')
 
 var schema = schemata(
     { type:
@@ -28,11 +25,11 @@ var schema = schemata(
       }
     , url:
       { type: String
-      , validators: { all: [ validateIfPropertyEquals('type', 'link', validity.url) ] }
+      , validators: { all: [ validateIfPropertyIn('type', [ 'url', 'link' ], validity.url) ] }
       }
     })
-
 ```
 
 ## Credits
-[Adam Duncan](https://github.com/microadam/)
+This is a fork of [validity-validate-if-property-equals](https://github.com/microadam/validity-validate-if-property-equals)
+by [Adam Duncan](https://github.com/microadam/)

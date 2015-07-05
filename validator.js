@@ -1,7 +1,11 @@
-module.exports = function validateIfPropertyEquals(property, value, validator) {
+module.exports = function validateIfPropertyIn(property, values, validator) {
 
   if (!property) {
     throw new Error('No property to check provided')
+  }
+
+  if (!Array.isArray(values)) {
+    throw new Error('Values must be an array')
   }
 
   if (!validator || typeof validator !== 'function') {
@@ -9,7 +13,7 @@ module.exports = function validateIfPropertyEquals(property, value, validator) {
   }
 
   return function (key, msg, object, callback) {
-    if (object[property] === value) {
+    if (values.indexOf(object[property]) > -1) {
       return validator(key, msg, object, callback)
     }
 
