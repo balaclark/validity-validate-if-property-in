@@ -1,11 +1,11 @@
-# validity-validate-if-property-equals
+# validity-validate-if-property-in
 
 Validate the current property if another property value is one of a list of values.
 
 ## Installation
 
 ```
-npm install validity-validate-if-property-in-array --save
+npm install validity-validate-if-property-in --save
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ var validity = require('validity')
   , schemata = require('schemata')
   , save = require('save')
   , collection = save('author')
-  , validateIfPropertyIn = require('validity-validate-if-property-in-array')
+  , validateIfPropertyIn = require('validity-validate-if-property-in')
 
 var schema = schemata(
     { type:
